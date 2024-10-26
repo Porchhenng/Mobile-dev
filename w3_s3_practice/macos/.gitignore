@@ -19,6 +19,23 @@ android/.gradle/
 android/app/proguard-rules.pro
 **/local.properties
 
+# iOS-related files
+ios/Pods/
+ios/.symlinks/
+ios/Flutter/.last_build_id
+ios/Flutter/ephemeral/
+**/xcuserdata/
+**/DerivedData/
+**/.generated/
+
+# macOS-related files
+macos/Flutter/ephemeral/
+macos/Pods/
+macos/.symlinks/
+**/.DS_Store
+
+# Linux-related files
+linux/flutter/ephemeral/
 
 # Windows-related files
 windows/flutter/ephemeral/
