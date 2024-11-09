@@ -85,7 +85,7 @@ class WeatherCard extends StatelessWidget {
         children: [
           Text(
             '${cardData.day.toString().split('.').last}',
-            style: TextStyle(
+            style: const TextStyle(
               fontFamily: 'Roboto',
               fontWeight: FontWeight.bold,
               fontSize: 50,
@@ -123,13 +123,13 @@ void main() {
 
 class WeatherCardPager extends StatelessWidget {
   final List<Card> cards = [
-    Card(weatherCondition: WeatherCondition.sunny, day: Day.MONDAY),
-    Card(weatherCondition: WeatherCondition.cloudy, day: Day.TUESDAY),
-    Card(weatherCondition: WeatherCondition.windy, day: Day.WEDNESDAY),
-    Card(weatherCondition: WeatherCondition.rainny, day: Day.THURSDAY),
-    Card(weatherCondition: WeatherCondition.sunny, day: Day.FRIDAY),
-    Card(weatherCondition: WeatherCondition.cloudy, day: Day.SATURDAY),
-    Card(weatherCondition: WeatherCondition.windy, day: Day.SUNDAY),
+    const Card(weatherCondition: WeatherCondition.sunny, day: Day.MONDAY),
+    const Card(weatherCondition: WeatherCondition.cloudy, day: Day.TUESDAY),
+    const Card(weatherCondition: WeatherCondition.windy, day: Day.WEDNESDAY),
+    const Card(weatherCondition: WeatherCondition.rainny, day: Day.THURSDAY),
+    const Card(weatherCondition: WeatherCondition.sunny, day: Day.FRIDAY),
+    const Card(weatherCondition: WeatherCondition.cloudy, day: Day.SATURDAY),
+    const Card(weatherCondition: WeatherCondition.windy, day: Day.SUNDAY),
   ];
 
   @override
