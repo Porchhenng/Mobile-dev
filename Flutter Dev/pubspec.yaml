@@ -63,6 +63,7 @@ flutter:
   assets:
     - assets/
     - assets/w4-s3/
+    - assets/w6/
 
 fonts:
     - family: Roboto
