@@ -15,7 +15,7 @@ class JokeApp extends StatefulWidget {
 
 class _JokeAppState extends State<JokeApp> {
   final Jokes jokes = Jokes();
-  String? bestJokeTitle; // Keeps track of the "best joke"
+  String? bestJokeTitle;
 
   @override
   Widget build(BuildContext context) {
@@ -37,7 +37,7 @@ class _JokeAppState extends State<JokeApp> {
             isFavorite: joke.key == bestJokeTitle,
             onBestJokeSelected: () {
               setState(() {
-                bestJokeTitle = joke.key; // Update the best joke
+                bestJokeTitle = joke.key;
               });
             },
           );

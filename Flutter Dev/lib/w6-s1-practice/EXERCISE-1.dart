@@ -26,8 +26,8 @@ void main() {
     ),
   ));
 }
-List<Widget> getList(){
-  return colors.map((item) => Text(item)).toList();
+Iterable<Widget> getList(){
+  return colors.map((item) => Text(item));
 }
 
 class Label extends StatelessWidget {

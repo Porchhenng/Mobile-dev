@@ -23,7 +23,20 @@ class _TemperatureState extends State<Temperature> {
   );
 
   String? fahrenheitResult;
+  String? CielciusResult;
+  final TextEditingController CielciusController = TextEditingController();
   final TextEditingController temperatureController = TextEditingController();
+
+  void convertToCielcius(){
+    final String tempText = CielciusController.text;
+    if( tempText.isNotEmpty){
+      try{
+      final double fahrenheit = double.parse(tempText);
+      final double cielcius = (fahrenheit - 32) * 5/9;
+      }catch(e){
+      }
+    }
+  }
 
   void convertToFahrenheit() {
     final String tempText = temperatureController.text;
