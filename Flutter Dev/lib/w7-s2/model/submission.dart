@@ -1,10 +1,10 @@
-import 'package:w3_s3_practice/w7-s1/model/quiz.dart';
+import 'package:w3_s3_practice/w7-s2/model/quiz.dart';
 import 'dart:core';
 
 class Answer {
-  String? answers;
-  late final Question question;
 
+  String answers;
+  late final Question question;
   Answer({required this.question, required this.answers});
   
  bool isCorrect() => answers == question.goodAnswer;

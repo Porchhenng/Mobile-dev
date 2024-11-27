@@ -1,4 +1,10 @@
- 
+ enum QuizState
+ {
+  notStart,
+  Started,
+  finished,
+
+ }
 class Quiz {
   final String title;
   final List<Question> questions;

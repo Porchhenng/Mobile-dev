@@ -1,5 +1,5 @@
-import 'package:w3_s3_practice/w7-s1/model/quiz.dart';
-import 'package:w3_s3_practice/w7-s1/model/submission.dart';
+import 'package:w3_s3_practice/w7-s2/model/quiz.dart';
+import 'package:w3_s3_practice/w7-s2/model/submission.dart';
 void main(){
   Question q1 = Question
   (title: 'WHAT IS THIS', 

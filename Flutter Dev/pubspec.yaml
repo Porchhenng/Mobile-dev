@@ -29,6 +29,8 @@ environment:
 # versions available, run `flutter pub outdated`.
 dependencies:
   uuid: ^3.0.7
+
+  intl: 0.20.0
   weather_icons: 3.0.0
   flutter:
     sdk: flutter

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:w3_s3_practice/w7-s1/model/quiz.dart';
-import 'package:w3_s3_practice/w7-s1/quiz_app.dart';
-import 'package:w3_s3_practice/w7-s1/screens/question_screen.dart';
-import 'package:w3_s3_practice/w7-s1/widgets/app_button.dart';
+import 'package:w3_s3_practice/w7-s2/model/quiz.dart';
+import 'package:w3_s3_practice/w7-s2/quiz_app.dart';
+import 'package:w3_s3_practice/w7-s2/screens/question_screen.dart';
+import 'package:w3_s3_practice/w7-s2/widgets/app_button.dart';
 
  class WelcomeScreen extends StatelessWidget {
   final Quiz quiz; // The Quiz object

@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:w3_s3_practice/w7-s1/model/submission.dart';
-import 'package:w3_s3_practice/w7-s1/widgets/app_button.dart';
+import 'package:w3_s3_practice/w7-s2/model/submission.dart';
+import 'package:w3_s3_practice/w7-s2/widgets/app_button.dart';
 import '../model/quiz.dart';
 
 class QuestionScreen extends StatefulWidget {
-  final Quiz quiz;
+  final Question question;
+  final void Function(String) onAnswerSelect; 
 
-  const QuestionScreen({super.key, required this.quiz});
+  const QuestionScreen({super.key, required this.question, required this.onAnswerSelect});
 
   @override
   State<QuestionScreen> createState() => _QuestionScreenState();
@@ -15,42 +16,28 @@ class QuestionScreen extends StatefulWidget {
 class _QuestionScreenState extends State<QuestionScreen> {
   int currentQuestion = 0;
 
-  void onAnswerSelect(String answer) {
-    print("Selected answer: $answer");
-
-    if (currentQuestion < widget.quiz.questions.length - 1) {
-      setState(() {
-        currentQuestion++;
-      });
-    } else {
-      print("Quiz completed");
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('Quiz completed!')),
-      );
-    }
-  }
 
   @override
   Widget build(BuildContext context) {
-    final question = widget.quiz.questions[currentQuestion];
+    
 
     return Scaffold(
       backgroundColor: Colors.blue.shade100, // Light blue background
       appBar: AppBar(
         backgroundColor: Colors.blue,
-        title: Text(widget.quiz.title),
-        elevation: 0, // Flat app bar
+        title: Text('quiz'),
+        elevation: 0,
       ),
       body: Center(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16.0), // Horizontal padding for layout
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.center, // Center align content
-            crossAxisAlignment: CrossAxisAlignment.center, // Center align text
+            mainAxisAlignment: MainAxisAlignment.center, 
+            crossAxisAlignment: CrossAxisAlignment.center, 
             children: [
               
               Text(
-                question.title,
+                widget.question.title,
                 textAlign: TextAlign.center,
                 style: const TextStyle(
                   fontSize: 24,
@@ -61,12 +48,15 @@ class _QuestionScreenState extends State<QuestionScreen> {
               const SizedBox(height: 40), // Space between question and answers
 
               
-              ...question.possibleAnswers.map(
+              ...widget.question.possibleAnswers.map(
                 (answer) => Padding(
                   padding: const EdgeInsets.only(bottom: 12.0), // Spacing between buttons
                   child: AppButton(
+                    
                     answer,
-                    onTap: () => onAnswerSelect(answer),
+                    onTap: () => widget.onAnswerSelect(answer),
+                    
+                    icon: Icons.question_answer,
                   
                   ),
                 ),
