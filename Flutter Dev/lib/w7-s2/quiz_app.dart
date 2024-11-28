@@ -44,6 +44,12 @@ class _QuizAppState extends State<QuizApp> {
   Screen currentScreen = Screen.welcome;
 
 
+  void navigateToWelcome(){
+    setState(() {
+      currentScreen = Screen.welcome;
+    });
+  }
+
 
   void navigateToQuiz() {
     setState(() {
@@ -66,7 +72,9 @@ class _QuizAppState extends State<QuizApp> {
         screen = QuestionScreen(question: widget.quiz.questions[currentQuestion], onAnswerSelect: onAnswerSelect);
         break;
       case Screen.result:
-      screen = ResultScreen(submission: submission);    
+      screen = ResultScreen(submission: submission, 
+      onTap: navigateToWelcome,); 
+      break;   
       }
     return MaterialApp(
       home: Scaffold(
