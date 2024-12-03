@@ -23,7 +23,6 @@ class ResultScreen extends StatelessWidget {
             
             ],
           ),
-        
         ),
         AppButton('Restart Quiz', onTap: (){
           onTap();

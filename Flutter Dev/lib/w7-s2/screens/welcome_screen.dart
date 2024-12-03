@@ -6,7 +6,7 @@ import 'package:w3_s3_practice/w7-s2/widgets/app_button.dart';
 
  class WelcomeScreen extends StatelessWidget {
   final Quiz quiz; // The Quiz object
-  final VoidCallback onTap; // The callback for navigation
+  final VoidCallback onTap; 
 
   const WelcomeScreen({super.key, required this.quiz, required this.onTap});
 

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:w3_s3_practice/w8-test/screens/expenses/expenses_form.dart';
-
+ 
 import '../../models/expense.dart';
+import 'expenses_form.dart';
 import 'expenses_list.dart';
 
 class Expenses extends StatefulWidget {
@@ -28,13 +28,42 @@ class _ExpensesState extends State<Expenses> {
       category: Category.leisure,
     ),
   ];
+
+
+  void onExpenseRemoved(Expense expense) {
+     final removedExpense = expense;
+
+    setState(() {
+      _registeredExpenses.remove(expense);
+    });
+
+     ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: const Text('Expense removed'),
+        action: SnackBarAction(
+          label: 'Undo',
+          onPressed: () {
+            setState(() {
+              _registeredExpenses.add(removedExpense);
+            });
+          },
+        ),
+      ),
+    );
+  }
+
+  void onExpenseCreated(Expense newExpense) {
+    setState(() {
+      _registeredExpenses.add(newExpense);
+    });
+  }
  
 
   void onAddPressed() {
     showModalBottomSheet(
       context: context,
       isScrollControlled: true,
-      builder: (ctx) => const ExpenseForm(),
+      builder: (ctx) => ExpenseForm(onCreated: onExpenseCreated,),
     );
   }
 
@@ -52,7 +81,8 @@ class _ExpensesState extends State<Expenses> {
         backgroundColor: Colors.blue[700],
         title: const Text('Ronan-The-Best Expenses App'),
       ),
-      body: ExpensesList(expenses: _registeredExpenses),
+      body: ExpensesList(expenses: _registeredExpenses, onExpenseRemoved: onExpenseRemoved,)
+      
     );
   }
 }
